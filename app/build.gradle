@@ -14,34 +14,16 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        debug {
-            storeFile file("keystore/debug.keystore")
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-            storePassword 'android'
-        }
-
-        googlePlayRelease {
-            storeFile file("keystore/myflickr_key.jks")
-            keyAlias 'myflickr2016'
-            keyPassword 'myflickr2016'
-            storePassword 'myflickr2016'
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.googlePlayRelease
         }
 
         debug {
             minifyEnabled false
             debuggable true
-            signingConfig signingConfigs.debug
         }
     }
     packagingOptions {
